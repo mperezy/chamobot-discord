@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  discord-bot:
+    hostname: chamobot
+    build: .
+    container_name: chamobot
+    working_dir: /app
+    volumes:
+      - './:/app'
+    ports:
+      - "7004:3000"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
